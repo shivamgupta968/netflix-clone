@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StreamHub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Screen 1: Profile picker -->
+  <section id="profile-screen" class="profile-screen">
+    <h1>Who's watching?</h1>
+    <div class="profiles">
+      <button class="profile">
+        <img src="me.jpg" alt="Shivam" />
+        <span>Shivam</span>
+      </button>
+      <button class="profile">
+        <div class="avatar guest">G</div>
+        <span>Guest</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Screen 2: Main app -->
+  <div id="app" class="hidden">
+    <header class="navbar" id="navbar">
+      <div class="nav-left">
+        <span class="logo">STREAMHUB</span>
+        <nav>
+          <a href="#" class="active" data-filter="Home">Home</a>
+          <a href="#" data-filter="Movies">Movies</a>
+          <a href="#" data-filter="Series">Series</a>
+          <a href="#" data-filter="MyList">My List</a>
+        </nav>
+      </div>
+      <div class="nav-right">
+        <input type="search" id="search" placeholder="Search titles..." />
+        <img src="me.jpg" alt="Profile" class="nav-avatar" />
+      </div>
+    </header>
+
+    <section class="hero" id="hero"></section>
+    <main id="rows"></main>
+
+    <footer class="credit">
+      <img src="me.jpg" alt="Shivam Gupta" />
+      <div>
+        <h3>Built by Shivam Gupta</h3>
+        <p>A Netflix-style clone made with HTML, CSS and JavaScript.</p>
+        <a href="https://github.com/shivamgupta968" target="_blank">View my GitHub</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Movie details popup -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-box">
+      <button class="close" id="close-modal">&times;</button>
+      <div class="modal-art" id="modal-art"></div>
+      <div class="modal-body">
+        <h2 id="modal-title"></h2>
+        <p class="meta" id="modal-meta"></p>
+        <p id="modal-desc"></p>
+        <button class="btn play" id="modal-play">▶ Play</button>
+        <button class="btn" id="modal-list">+ My List</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Video player -->
+  <div id="player" class="player hidden">
+    <button class="close" id="close-player">&times;</button>
+    <video id="video" controls></video>
+    <p id="player-title"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
